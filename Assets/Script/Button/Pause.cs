@@ -9,4 +9,12 @@ public class Pause : MonoBehaviour
     {
         SceneManager.LoadScene(0); //balik ke menu
     }
+    public void pause()
+    {
+        Time.timeScale = 0;
+    }
+    public void play()
+    {
+        Time.timeScale = 1;
+    }
 }

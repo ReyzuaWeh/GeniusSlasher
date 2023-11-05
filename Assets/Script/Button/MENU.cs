@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MENU : MonoBehaviour
 {
+    void Start()
+    {
+        Time.timeScale = 1;
+    }
     public void exit()//tombol exit, WAJIB PUBLIC agar dapat diakses
     {
         Debug.Log("AKU KELUAR!");
@@ -12,7 +16,7 @@ public class MENU : MonoBehaviour
     }
     public void tutorial()
     {
-        SceneManager.LoadScene("Tutorial");//pindahscene
+        SceneManager.LoadScene("Tutorial");//tutorial
     }
 
     public void lvl1()//lvl1
