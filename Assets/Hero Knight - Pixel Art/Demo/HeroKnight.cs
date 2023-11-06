@@ -8,6 +8,11 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_rollForce = 6.0f;
     [SerializeField] GameObject m_slideDust;
 
+    public LayerMask            musuh;
+    public float                detection;
+    public Transform            attSensor;
+    public float                damage;
+
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_HeroKnight   m_groundSensor;
@@ -97,6 +102,8 @@ public class HeroKnight : MonoBehaviour {
         //Attack
         if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
+            Collider2D[] serang = Physics2D.OverlapCircleAll(attSensor.position, detection, musuh);
+            
             m_currentAttack++;
 
             // Loop back to one after third attack
@@ -106,9 +113,18 @@ public class HeroKnight : MonoBehaviour {
             // Reset Attack combo if time since last attack is too large
             if (m_timeSinceAttack > 1.0f)
                 m_currentAttack = 1;
-
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
             m_animator.SetTrigger("Attack" + m_currentAttack);
+           
+            foreach (Collider2D collider in serang)
+            {
+                Debug.Log("Menyerang " + collider.gameObject.name);
+                if(collider.gameObject.tag == "Tutorial")
+                {
+                    collider.GetComponent<tutorialHealth>().hp();
+                }
+            }
+            
 
             // Reset timer
             m_timeSinceAttack = 0.0f;
