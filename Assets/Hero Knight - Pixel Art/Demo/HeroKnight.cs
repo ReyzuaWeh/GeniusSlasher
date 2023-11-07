@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Threading;
 
 public class HeroKnight : MonoBehaviour {
 
@@ -11,7 +13,7 @@ public class HeroKnight : MonoBehaviour {
     public LayerMask            musuh;
     public float                detection;
     public Transform            attSensor;
-    public float                damage;
+    public float                damage = 2;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -195,5 +197,15 @@ public class HeroKnight : MonoBehaviour {
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
+    }
+    public void normal()
+    {
+        Debug.Log("BALIK NORMAL");
+        damage = 2;
+    }
+    public void dmgBuff()
+    {
+        damage = damage * 5;
+        Debug.Log("MAKIN SAKIT " + damage);
     }
 }
