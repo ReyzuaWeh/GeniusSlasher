@@ -124,6 +124,9 @@ public class HeroKnight : MonoBehaviour {
                 if(collider.gameObject.tag == "Tutorial")
                 {
                     collider.GetComponent<tutorialHealth>().hp();
+                }else if(collider.gameObject.tag == "slime")
+                {
+                    collider.GetComponent<slime>().SlashSlime(damage);
                 }
             }
             

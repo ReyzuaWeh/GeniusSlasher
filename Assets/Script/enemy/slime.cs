@@ -15,6 +15,7 @@ public class slime : MonoBehaviour
     [SerializeField] private float delay = 2f;
     [SerializeField] private float timeJump = 3f;
     [SerializeField] private float jump;
+    [SerializeField] private float hp = 2;
     Rigidbody2D rb;
 
 
@@ -28,6 +29,10 @@ public class slime : MonoBehaviour
 
     void Update()
     {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         if(timeJump > 0)
         {
             timeJump -= Time.deltaTime;
@@ -87,5 +92,9 @@ public class slime : MonoBehaviour
             }
             delay = 2f;
         }
+    }
+    public void SlashSlime(float uDmg)
+    {
+        hp -= uDmg;
     }
 }

@@ -1150,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: damage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: attSensor
@@ -2320,9 +2320,9 @@ GameObject:
   - component: {fileID: 1037664401}
   - component: {fileID: 1037664405}
   - component: {fileID: 1037664406}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: slime
-  m_TagString: Untagged
+  m_TagString: slime
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2512,6 +2512,7 @@ MonoBehaviour:
   delay: 2
   timeJump: 3
   jump: 200
+  hp: 2
 --- !u!1 &1135014637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1360448122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
