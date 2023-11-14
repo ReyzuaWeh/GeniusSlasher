@@ -86,6 +86,7 @@ public class slime : MonoBehaviour
             {
                 if (hit.gameObject.CompareTag("Player"))
                 {
+                    aSlime.SetTrigger("Attack");
                     user.GetComponent<hp>().diserang(damageSlime);
                     Debug.Log("Nyerang Player");
                 }

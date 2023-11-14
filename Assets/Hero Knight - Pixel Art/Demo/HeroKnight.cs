@@ -161,7 +161,7 @@ public class HeroKnight : MonoBehaviour {
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
             m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
-            m_groundSensor.Disable(0.2f);
+            m_groundSensor.Disable(1f);
         }
 
         //Run
@@ -211,4 +211,6 @@ public class HeroKnight : MonoBehaviour {
         damage = damage * 5;
         Debug.Log("MAKIN SAKIT " + damage);
     }
+    
+
 }
