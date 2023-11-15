@@ -8,12 +8,15 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      m_rollForce = 6.0f;
+    [SerializeField] float jarakTanah;
     [SerializeField] GameObject m_slideDust;
+    [SerializeField] GameObject sensorSerang;
 
     public LayerMask            musuh;
+    public LayerMask            tanahnya;
     public float                detection;
-    public Transform            attSensor;
     public float                damage = 2;
+    public Transform            attSensor;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -48,6 +51,7 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
@@ -60,14 +64,14 @@ public class HeroKnight : MonoBehaviour {
             m_rolling = false;
 
         //Check if character just landed on the ground
-        if (!m_grounded && m_groundSensor.State())
+        if (tanah())
         {
             m_grounded = true;
             m_animator.SetBool("Grounded", m_grounded);
         }
 
         //Check if character just started falling
-        if (m_grounded && !m_groundSensor.State())
+        if (m_body2d.velocity.y < -0.1f)
         {
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
@@ -79,13 +83,18 @@ public class HeroKnight : MonoBehaviour {
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            if(transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x,transform.localScale.y, transform.localScale.z);
+            }
             m_facingDirection = 1;
         }
-            
         else if (inputX < 0)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            if (transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
             m_facingDirection = -1;
         }
 
@@ -105,8 +114,8 @@ public class HeroKnight : MonoBehaviour {
         if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
             Collider2D[] serang = Physics2D.OverlapCircleAll(attSensor.position, detection, musuh);
-            
             m_currentAttack++;
+
 
             // Loop back to one after third attack
             if (m_currentAttack > 3)
@@ -201,6 +210,17 @@ public class HeroKnight : MonoBehaviour {
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
     }
+    bool tanah()
+    {
+        RaycastHit2D tanahDetect = Physics2D.Raycast(transform.position, Vector2.down, jarakTanah, tanahnya);
+        return tanahDetect != null;
+    }
+    bool jatuh()
+    {
+        RaycastHit2D tanahDetectDeket = Physics2D.Raycast(transform.position, Vector2.down, 10f, tanahnya);
+        return tanahDetectDeket != null;
+
+    }
     public void normal()
     {
         Debug.Log("BALIK NORMAL");
@@ -211,6 +231,14 @@ public class HeroKnight : MonoBehaviour {
         damage = damage * 5;
         Debug.Log("MAKIN SAKIT " + damage);
     }
-    
+    void OnDrawGizmos()
+    {
+        if(attSensor != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attSensor.position, detection);
 
+        }
+    }
+    
 }
