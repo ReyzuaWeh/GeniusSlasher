@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class interact : MonoBehaviour
 {
+    public float size; 
     [SerializeField] Transform area;
-    [SerializeField] float size; 
     [SerializeField] LayerMask npc; 
     [SerializeField] bool izin; 
     // Start is called before the first frame update
@@ -27,7 +27,6 @@ public class interact : MonoBehaviour
     void hey()
     {
         Collider2D npcKah = Physics2D.OverlapCircle(area.position, size, npc);
-
         if(Input.GetMouseButtonDown(1) && izin)
         {
             izin = false;
@@ -35,7 +34,7 @@ public class interact : MonoBehaviour
             {
                 if(npcKah.CompareTag("TNPC")) {
                     Debug.Log("Ini TNPC, namanya "+ npcKah.name);
-                    if(npcKah.name == "siPejuang")
+                    if(npcKah.gameObject.name == "siPejuang")
                     {
                         npcKah.GetComponent<introTrade>().ditanya();
                     }
