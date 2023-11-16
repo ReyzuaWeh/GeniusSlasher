@@ -32,6 +32,7 @@ public class introTrade : MonoBehaviour
     // Update is called once per frame
     public void ditanya()
     {
+        //Time.timeScale = 0;
         timer.gameObject.SetActive(true);
     }
     public void terdetect()

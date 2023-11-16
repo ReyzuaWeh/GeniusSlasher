@@ -27,7 +27,7 @@ public class interact : MonoBehaviour
     void hey()
     {
         Collider2D npcKah = Physics2D.OverlapCircle(area.position, size, npc);
-        if(Input.GetMouseButtonDown(1) && izin)
+        if(Input.GetKeyDown(KeyCode.E) && izin)
         {
             izin = false;
             if (npcKah != null)
@@ -41,7 +41,7 @@ public class interact : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetMouseButtonUp(1))
+        else if (Input.GetKeyUp(KeyCode.E))
         {
             izin=true;
         }

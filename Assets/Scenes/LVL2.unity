@@ -3832,6 +3832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3673295eff95948abb1e1e561b1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIpause: {fileID: 435984390}
 --- !u!224 &435984390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9176,6 +9177,7 @@ GameObject:
   - component: {fileID: 1289126246}
   - component: {fileID: 1289126245}
   - component: {fileID: 1289126244}
+  - component: {fileID: 1289126248}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9269,6 +9271,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1289126248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289126243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94345c187b4d79d49868f28b758864f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 435984390}
+  timerUI: {fileID: 1830409629}
+  hpUI: {fileID: 2140022166}
+  pauseMenuUI: {fileID: 1126887440}
 --- !u!1 &1397348670
 GameObject:
   m_ObjectHideFlags: 0
@@ -10509,7 +10527,7 @@ RectTransform:
   m_GameObject: {fileID: 2140022165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4128811, y: 0.5171077, z: 1.3038381}
+  m_LocalScale: {x: 2.4128811, y: 0.5171077, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 120283531}
@@ -10568,7 +10586,6 @@ MonoBehaviour:
   hpUI: {fileID: 426241651}
   health: {fileID: 120283532}
   user: {fileID: 1648022029}
-  UI: {fileID: 0}
   gradien:
     serializedVersion: 2
     key0: {r: 0.65882355, g: 0.14901961, b: 0.18039216, a: 1}
@@ -10599,7 +10616,6 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 6
     m_NumAlphaKeys: 2
-  screenPembanding: 1920
   hpMax: 0
   hpNow: 0
 --- !u!114 &2140022169

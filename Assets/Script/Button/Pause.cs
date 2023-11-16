@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
+    public RectTransform UIpause;
+    private float screenPembanding = 800f;
+    void Start()
+    {
+        float scaleFactor = Screen.width / screenPembanding;
+        UIpause.sizeDelta = new Vector2(UIpause.sizeDelta.x * scaleFactor, UIpause.sizeDelta.y * scaleFactor);
+    }
     public void home()
     {
         SceneManager.LoadScene(0); //balik ke menu
