@@ -8,7 +8,7 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      m_rollForce = 6.0f;
-    [SerializeField] float jarakTanah;
+    [SerializeField] float      jarakTanah;
     [SerializeField] GameObject m_slideDust;
     [SerializeField] GameObject sensorSerang;
 
@@ -213,12 +213,12 @@ public class HeroKnight : MonoBehaviour {
     bool tanah()
     {
         RaycastHit2D tanahDetect = Physics2D.Raycast(transform.position, Vector2.down, jarakTanah, tanahnya);
-        return tanahDetect != null;
+        return tanahDetect == true;
     }
     bool jatuh()
     {
         RaycastHit2D tanahDetectDeket = Physics2D.Raycast(transform.position, Vector2.down, 10f, tanahnya);
-        return tanahDetectDeket != null;
+        return tanahDetectDeket == true;
 
     }
     public void normal()
