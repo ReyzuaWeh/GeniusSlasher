@@ -29,6 +29,14 @@ public class slime : MonoBehaviour
 
     void Update()
     {
+        if(transform.localScale.x < 0)
+        {
+            isMovingRight = true;
+        }
+        else
+        {
+            isMovingRight = false;
+        }
         if (hp <= 0)
         {
             Destroy(gameObject);

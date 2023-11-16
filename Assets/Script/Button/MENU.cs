@@ -12,7 +12,7 @@ public class MENU : MonoBehaviour
     public void exit()//tombol exit, WAJIB PUBLIC agar dapat diakses
     {
         Debug.Log("AKU KELUAR!");
-        Application.Quit();
+        Application.Quit();//hanya bisa jika kita bukan jadi pengembang (hanya bisa dirasakan user)
     }
     public void tutorial()
     {
