@@ -7,7 +7,7 @@ public class interact : MonoBehaviour
     public float size; 
     [SerializeField] Transform area;
     [SerializeField] LayerMask npc; 
-    [SerializeField] bool izin; 
+    [SerializeField] bool izin;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +27,10 @@ public class interact : MonoBehaviour
     void hey()
     {
         Collider2D npcKah = Physics2D.OverlapCircle(area.position, size, npc);
-        if(Input.GetKeyDown(KeyCode.E) && izin)
+        if(Input.GetKeyDown(KeyCode.E) && izin && GetComponent<Rigidbody2D>().velocity.x == 0)
         {
             izin = false;
+            Debug.Log("bisa");
             if (npcKah != null)
             {
                 if(npcKah.CompareTag("TNPC")) {
@@ -40,6 +41,7 @@ public class interact : MonoBehaviour
                     }
                 }
             }
+            
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {

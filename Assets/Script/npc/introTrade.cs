@@ -10,10 +10,14 @@ public class introTrade : MonoBehaviour
     public GameObject user;
     public LayerMask lUser;
     public Transform pDetect;
+    public GameObject dialog;
+
     public float jDetect;
     // Start is called before the first frame update
     void Start()
     {
+        pDetect.gameObject.SetActive(false);
+        dialog.gameObject.SetActive(false);
         timer.gameObject.SetActive(false);
         jDetect = user.GetComponent<interact>().size;
     }
@@ -32,8 +36,14 @@ public class introTrade : MonoBehaviour
     // Update is called once per frame
     public void ditanya()
     {
-        //Time.timeScale = 0;
+        user.GetComponent<HeroKnight>().enabled= false;
+        dialog.gameObject.SetActive(true);
+        dialog.GetComponent<dialog>().MulaiDialog();
+    }
+    public void sudahBeres()
+    {
         timer.gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
     public void terdetect()
     {
