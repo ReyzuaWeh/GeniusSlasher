@@ -43,6 +43,7 @@ public class introTrade : MonoBehaviour
     public void sudahBeres()
     {
         timer.gameObject.SetActive(true);
+        user.GetComponent<HeroKnight>().enabled = true;
         gameObject.SetActive(false);
     }
     public void terdetect()

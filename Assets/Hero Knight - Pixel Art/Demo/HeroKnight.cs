@@ -215,12 +215,6 @@ public class HeroKnight : MonoBehaviour {
         RaycastHit2D tanahDetect = Physics2D.Raycast(transform.position, Vector2.down, jarakTanah, tanahnya);
         return tanahDetect == true;
     }
-    bool jatuh()
-    {
-        RaycastHit2D tanahDetectDeket = Physics2D.Raycast(transform.position, Vector2.down, 10f, tanahnya);
-        return tanahDetectDeket == true;
-
-    }
     public void normal()
     {
         Debug.Log("BALIK NORMAL");
