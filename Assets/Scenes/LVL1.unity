@@ -5861,7 +5861,7 @@ Transform:
   m_GameObject: {fileID: 1037664400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.46, y: -2.05, z: 0}
+  m_LocalPosition: {x: 7.13, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5910,7 +5910,6 @@ MonoBehaviour:
   spd: 2
   damageSlime: 2
   tDetect: {fileID: 1360448122}
-  user: {fileID: 0}
   jDetect: 10
   tembok:
     serializedVersion: 2
@@ -5920,6 +5919,9 @@ MonoBehaviour:
   timeJump: 3
   jump: 200
   hp: 2
+  user:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &1080455249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6560,7 +6562,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1599769418}
   hpUI: {fileID: 2118168514}
   health: {fileID: 131927325}
-  user: {fileID: 0}
+  user: {fileID: 1670549316}
   gradien:
     serializedVersion: 2
     key0: {r: 0.65882355, g: 0.14901961, b: 0.18039216, a: 1}
@@ -6745,6 +6747,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1670549316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2582018098172144100, guid: 64a47090d57cd774ea9f270781d07282, type: 3}
+  m_PrefabInstance: {fileID: 1080455249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1670549324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 60141949338068403, guid: 64a47090d57cd774ea9f270781d07282, type: 3}
+  m_PrefabInstance: {fileID: 1080455249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1788125158
 GameObject:
   m_ObjectHideFlags: 0
@@ -19695,7 +19707,7 @@ PrefabInstance:
     - target: {fileID: 5450243745068176088, guid: 6f5368618d23160498a1ad38ae97dad9, type: 3}
       propertyPath: user
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1670549324}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

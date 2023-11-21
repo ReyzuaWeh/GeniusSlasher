@@ -7,7 +7,6 @@ public class slime : MonoBehaviour
     public float spd;
     public float damageSlime = 2;
     public Transform tDetect;
-    public GameObject user;
     public float jDetect;
     public LayerMask tembok;
     public Animator aSlime;
@@ -17,6 +16,8 @@ public class slime : MonoBehaviour
     [SerializeField] private float jump;
     [SerializeField] private float hp = 2;
     Rigidbody2D rb;
+    Vector2 arahDetect;
+    public LayerMask user;
 
 
     // Start is called before the first frame update
@@ -31,10 +32,12 @@ public class slime : MonoBehaviour
     {
         if(transform.localScale.x < 0)
         {
+            arahDetect = Vector2.right;
             isMovingRight = true;
         }
         else
         {
+            arahDetect = Vector2.left;
             isMovingRight = false;
         }
         if (hp <= 0)
@@ -69,7 +72,9 @@ public class slime : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("tanah"))
+        Debug.Log("Terjadi tabrakan fisik dengan: " + collision.gameObject.name);
+
+        if (collision.gameObject.tag == "tanah")
         {
             if(isMovingRight == true)
             {
@@ -80,27 +85,63 @@ public class slime : MonoBehaviour
                 isMovingRight = true;
             }
         }
+
+    }
+    void OnCollision2D(Collision2D collision)
+    {
+        Debug.Log("Nama "+ collision.gameObject.name);
+        if (collision.gameObject.tag == "Player")
+        {
+            aSlime.SetTrigger("Attack");
+            System.Threading.Thread.Sleep(1000);
+            collision.gameObject.GetComponent<hp>().diserang(damageSlime);
+            Debug.Log("Nyerang Player");
+        }
     }
     void cekserang()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
-        if(delay > 0)
-        {
-            delay -= Time.deltaTime;
-        }
-        else
-        {
-            foreach(Collider2D hit in hits)
-            {
-                if (hit.gameObject.CompareTag("Player"))
-                {
-                    aSlime.SetTrigger("Attack");
-                    user.GetComponent<hp>().diserang(damageSlime);
-                    Debug.Log("Nyerang Player");
-                }
-            }
-            delay = 2f;
-        }
+        //RaycastHit2D serangs = Physics2D.Raycast(transform.position, arahDetect, 1f, user);
+        //if (serangs != null)
+        //{
+        //    Debug.Log(serangs.collider.name);
+        //}
+        //if(delay > 0)
+        //{
+        //    delay -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    if (serangs.collider.tag == "Player")
+        //    {
+        //        aSlime.SetTrigger("Attack");
+        //        System.Threading.Thread.Sleep(1000);
+        //        serangs.collider.gameObject.GetComponent<hp>().diserang(damageSlime);
+        //        Debug.Log("Nyerang Player");
+        //    }
+        //    delay = 2f;
+        //}
+        //foreach(var serang in serangs)
+        //{
+        //}
+        //Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
+        //if (delay > 0)
+        //{
+        //    delay -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    foreach (Collider2D hit in hits)
+        //    {
+        //        if (hit.gameObject.CompareTag("Player"))
+        //        {
+        //            aSlime.SetTrigger("Attack");
+        //            System.Threading.Thread.Sleep(1000);
+        //            hit.gameObject.GetComponent<hp>().diserang(damageSlime);
+        //            Debug.Log("Nyerang Player");
+        //        }
+        //    }
+        //    delay = 2f;
+        //}
     }
     public void SlashSlime(float uDmg)
     {
