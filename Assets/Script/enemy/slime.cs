@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class slime : MonoBehaviour
 {
     public float spd;
@@ -72,7 +73,21 @@ public class slime : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Terjadi tabrakan fisik dengan: " + collision.gameObject.name);
+        //Debug.Log("Terjadi tabrakan fisik dengan: " + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Terjadi tabrakan fisik dengan User dengan tag :" + collision.gameObject.tag);
+            aSlime.SetTrigger("Attack");
+            collision.gameObject.GetComponent<hp>().diserang(damageSlime);
+            if (isMovingRight)
+            {
+                rb.velocity = new Vector2(-5, 0);
+            }
+            else
+            {
+                rb.velocity = new Vector2(5,0);
+            }
+        }
 
         if (collision.gameObject.tag == "tanah")
         {
@@ -87,16 +102,11 @@ public class slime : MonoBehaviour
         }
 
     }
-    void OnCollision2D(Collision2D collision)
+    void OnAnimationComplete()
     {
-        Debug.Log("Nama "+ collision.gameObject.name);
-        if (collision.gameObject.tag == "Player")
-        {
-            aSlime.SetTrigger("Attack");
-            System.Threading.Thread.Sleep(1000);
-            collision.gameObject.GetComponent<hp>().diserang(damageSlime);
-            Debug.Log("Nyerang Player");
-        }
+        Debug.Log("Animasi telah selesai!");
+
+        // Lakukan sesuatu setelah animasi selesai
     }
     void cekserang()
     {
