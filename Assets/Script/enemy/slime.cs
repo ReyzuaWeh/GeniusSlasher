@@ -102,7 +102,7 @@ public class slime : MonoBehaviour
         }
 
     }
-    void OnAnimationComplete()
+    public void OnAnimationComplete()
     {
         Debug.Log("Animasi telah selesai!");
 
