@@ -10,6 +10,7 @@ TagManager:
   - tanah
   - slime
   - TNPC
+  - tembok
   layers:
   - Default
   - TransparentFX

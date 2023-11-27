@@ -31,6 +31,16 @@ public class slime : MonoBehaviour
 
     void Update()
     {
+        if (isMovingRight == true)
+        {
+            transform.localScale = new Vector3(-5f, 5f, 1);
+            transform.Translate(Vector3.right * spd * Time.deltaTime);
+        }
+        else
+        {
+            transform.localScale = new Vector3(5f, 5f, 1);
+            transform.Translate(Vector3.left * spd * Time.deltaTime);
+        }
         if(transform.localScale.x < 0)
         {
             arahDetect = Vector2.right;
@@ -58,16 +68,6 @@ public class slime : MonoBehaviour
         {
             timeJump = 0;
         }
-        if (isMovingRight == true)
-        {
-            transform.localScale = new Vector3(-5f, 5f, 1);
-            transform.Translate(Vector3.right * spd * Time.deltaTime);
-        }
-        else
-        {
-            transform.localScale = new Vector3(5f, 5f, 1);
-            transform.Translate(Vector3.left * spd * Time.deltaTime);
-        }
         cekserang();
     }
 
@@ -89,7 +89,7 @@ public class slime : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.tag == "tanah")
+        if (collision.gameObject.CompareTag("tembok"))
         {
             if(isMovingRight == true)
             {
