@@ -367,6 +367,7 @@ MonoBehaviour:
   pil3: {fileID: 2497266871810763050}
   pil4: {fileID: 1940336855194518432}
   pilihan: {fileID: 2519206857269459690}
+  cDisplay: {fileID: 0}
   canvasPertanyaan: {fileID: 3594614476771566188}
   trufalse:
     benar: Bagus, jawaban yang benar. Kau memang hebat pahlawan
@@ -1418,8 +1419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 1000, y: 300}
+  m_AnchoredPosition: {x: 0, y: -305}
+  m_SizeDelta: {x: 1000, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6518170430062434884
 CanvasRenderer:
@@ -1476,8 +1477,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -6,6 +6,12 @@ public class spawner : MonoBehaviour
 {
     public GameObject slime;
     public int panggilan;
+    private GameObject enemy;
+    public GameObject Enemy
+    {
+        get { return enemy; }
+        private set { enemy = value; }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +24,14 @@ public class spawner : MonoBehaviour
     {
         
     }
-    void Spawn()
+    public void spawn()
     {
         if(panggilan < 10)
         {
-            Instantiate(slime, transform.position, Quaternion.identity);
+            enemy = Instantiate(slime, transform.position, Quaternion.identity);
+            enemy.SetActive(true);
         }
         panggilan++;
     }
+
 }

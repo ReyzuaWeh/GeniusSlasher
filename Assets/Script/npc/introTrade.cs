@@ -10,6 +10,7 @@ public class introTrade : MonoBehaviour
     public GameObject user;
     public GameObject buff;
     public GameObject pertanyaan;
+    public GameObject spawner;
     public LayerMask lUser;
     public Transform pDetect;
     public GameObject dialog;
@@ -18,6 +19,7 @@ public class introTrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawner.gameObject.SetActive(false);
         pDetect.gameObject.SetActive(false);
         dialog.gameObject.SetActive(false);
         timer.gameObject.SetActive(false);
@@ -54,6 +56,10 @@ public class introTrade : MonoBehaviour
         dialog.gameObject.SetActive(false);
         timer.gameObject.SetActive(true);
         user.GetComponent<HeroKnight>().enabled = true;
+        if(spawner != null)
+        {
+            spawner.gameObject.SetActive(true);
+        }
         gameObject.SetActive(false);
     }
     public void pertanyaanBeres()

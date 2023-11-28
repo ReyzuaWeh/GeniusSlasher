@@ -9,6 +9,7 @@ public class countdown : MonoBehaviour
     public Text timerText;
     public GameObject user;
     public GameObject panelWin;
+    public GameObject spawner;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,7 @@ public class countdown : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-        }else if (timer <= 0)
+        }else if (timer <= 0 && spawner.GetComponent<spawner>().Enemy == null)
         {
             timer = 0;
             if (user.GetComponent<HeroKnight>().dahNormal == false)
