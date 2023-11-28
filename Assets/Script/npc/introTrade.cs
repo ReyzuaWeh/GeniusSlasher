@@ -8,6 +8,8 @@ public class introTrade : MonoBehaviour
     public Text timer;
     public GameObject interUI;
     public GameObject user;
+    public GameObject buff;
+    public GameObject pertanyaan;
     public LayerMask lUser;
     public Transform pDetect;
     public GameObject dialog;
@@ -42,9 +44,21 @@ public class introTrade : MonoBehaviour
     }
     public void sudahBeres()
     {
+        Debug.Log("sudahBeres()");
+        dialog.gameObject.SetActive(true);
+        dialog.GetComponent<dialog>().close = true;
+        dialog.GetComponent<dialog>().penutup();
+    }
+    public void sudahDihitung()
+    {
+        dialog.gameObject.SetActive(false);
         timer.gameObject.SetActive(true);
         user.GetComponent<HeroKnight>().enabled = true;
         gameObject.SetActive(false);
+    }
+    public void pertanyaanBeres()
+    {
+        pertanyaan.GetComponent<cDisplay>().pertanyaan();
     }
     public void terdetect()
     {

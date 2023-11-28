@@ -5,49 +5,43 @@ using UnityEngine;
 public class cDisplay : MonoBehaviour
 {
     public Camera main;
+    public Canvas mainCanvas;
     public Camera question1;
     public Canvas cq1;
-    public Camera question2;
-    public Canvas cq2;
-    public Camera question3;
-    public Canvas cq3;
-    public Camera question4;
-    public Canvas cq4;
-    public Camera question5;
-    public Canvas cq5;
+    public GameObject TNPC;
+
+    public int siBenar;
     // Start is called before the first frame update
     void Start()
     {
         main.enabled = true;
+        mainCanvas.enabled = true;
         question1.enabled = false;
-        question2.enabled = false;
-        question3.enabled = false;
-        question4.enabled = false;
-        question5.enabled = false;
+        cq1.enabled = false;
     }
 
     // Update is called once per frame
-    void Update()
+    public void pertanyaan()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (main.enabled)
         {
-            if(main.enabled)
+            main.enabled = false;
+            mainCanvas.enabled = false;
+            question1.enabled = true;
+            cq1.enabled = true;
+        }
+    }
+    public void pertanyaanBeres()
+    {
+        if (!main.enabled)
+        {
+            main.enabled = true;
+            mainCanvas.enabled = true;
+            question1.enabled = false;
+            cq1.enabled = false;
+            if (TNPC != null)
             {
-                main.enabled = false;
-                question1.enabled = true;
-                question2.enabled = false;
-                question3.enabled = false;
-                question4.enabled = false;
-                question5.enabled = false;
-            }
-            else
-            {
-                main.enabled = true;
-                question1.enabled = false;
-                question2.enabled = false;
-                question3.enabled = false;
-                question4.enabled = false;
-                question5.enabled = false;
+                TNPC.GetComponent<introTrade>().sudahBeres();
             }
         }
     }

@@ -12,7 +12,7 @@ public class slime : MonoBehaviour
     public LayerMask tembok;
     public Animator aSlime;
     bool isMovingRight;
-    [SerializeField] private float delay = 2f;
+    [SerializeField] private float delay = 0f;
     [SerializeField] private float timeJump = 3f;
     [SerializeField] private float jump;
     [SerializeField] private float hp = 2;
@@ -74,24 +74,33 @@ public class slime : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log("Terjadi tabrakan fisik dengan: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player"))
+        if(delay > 0)
         {
-            Debug.Log("Terjadi tabrakan fisik dengan User dengan tag :" + collision.gameObject.tag);
-            aSlime.SetTrigger("Attack");
-            collision.gameObject.GetComponent<hp>().diserang(damageSlime);
-            if (isMovingRight)
+            delay -= Time.timeScale;
+        }
+        else
+        {
+            if (collision.gameObject.CompareTag("Player"))
             {
-                rb.velocity = new Vector2(-5, 0);
-            }
-            else
-            {
-                rb.velocity = new Vector2(5,0);
+                Debug.Log("Terjadi tabrakan fisik dengan User dengan tag :" + collision.gameObject.tag);
+                aSlime.SetTrigger("Attack");
+                collision.gameObject.GetComponent<hp>().diserang(damageSlime);
+                if ((transform.localPosition.x - collision.gameObject.transform.localPosition.x) < 0 )
+                {
+                    rb.velocity = new Vector2(-5, 0);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(5, 0);
+                }
+                    delay = 1.5f;
             }
         }
 
         if (collision.gameObject.CompareTag("tembok"))
         {
-            if(isMovingRight == true)
+            Debug.Log("Terjadi tabrakan fisik dengan User dengan tag :" + collision.gameObject.tag);
+            if (isMovingRight == true)
             {
                 isMovingRight = false;
             }

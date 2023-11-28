@@ -5,10 +5,12 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public GameObject slime;
+    public int panggilan;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", 0f, 2f);
+        panggilan = 0;
+        InvokeRepeating("Spawn", 0f, 3f);
     }
 
     // Update is called once per frame
@@ -18,6 +20,10 @@ public class spawner : MonoBehaviour
     }
     void Spawn()
     {
-        Instantiate(slime, transform.position, Quaternion.identity);
+        if(panggilan < 10)
+        {
+            Instantiate(slime, transform.position, Quaternion.identity);
+        }
+        panggilan++;
     }
 }

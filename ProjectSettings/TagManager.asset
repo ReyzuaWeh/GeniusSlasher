@@ -11,6 +11,7 @@ TagManager:
   - slime
   - TNPC
   - tembok
+  - cameras
   layers:
   - Default
   - TransparentFX

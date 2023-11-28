@@ -17,6 +17,8 @@ public class HeroKnight : MonoBehaviour {
     public float                detection;
     public float                damage = 2;
     public Transform            attSensor;
+    public bool                 gaHidup;
+    public bool                 dahNormal;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -39,7 +41,11 @@ public class HeroKnight : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        Time.timeScale = 1;
+        dahNormal = false;
+        gaHidup = false;
         m_animator = GetComponent<Animator>();
+        m_animator.SetBool("noBlood", false);
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
         m_wallSensorR1 = transform.Find("WallSensor_R1").GetComponent<Sensor_HeroKnight>();
@@ -217,6 +223,7 @@ public class HeroKnight : MonoBehaviour {
     }
     public void normal()
     {
+        dahNormal = true;
         Debug.Log("BALIK NORMAL");
         damage = 2;
     }
@@ -224,6 +231,12 @@ public class HeroKnight : MonoBehaviour {
     {
         damage = damage * 5;
         Debug.Log("MAKIN SAKIT " + damage);
+    }
+    public void mati()
+    {
+        m_animator.SetTrigger("Death");
+        gaHidup = true;
+        enabled = false;
     }
     void OnDrawGizmos()
     {

@@ -7,18 +7,31 @@ public class countdown : MonoBehaviour
 {
     public float timer;
     public Text timerText;
-    HeroKnight user;
+    public GameObject user;
+    public GameObject panelWin;
     // Start is called before the first frame update
     void Start()
     {
-        user = GetComponent<HeroKnight>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        cd();
-        timerText.text = timer.ToString("0");
+        if(user.GetComponent<hp>().hitpoin <= 0)
+        {
+            timerText.text = string.Empty;
+        }
+        else
+        {
+            cd();
+            timerText.text = timer.ToString("0");
+        }
+        if(timerText.text == "0")
+        {
+            panelWin.SetActive(true);
+            timerText.text = string.Empty;
+            Time.timeScale = 0;
+        }
     }
     public void cd()
     {
@@ -28,7 +41,11 @@ public class countdown : MonoBehaviour
         }else if (timer <= 0)
         {
             timer = 0;
-            user.normal();
+            if (user.GetComponent<HeroKnight>().dahNormal == false)
+            {
+                user.GetComponent<HeroKnight>().normal();
+            }
         }
     }
+
 }

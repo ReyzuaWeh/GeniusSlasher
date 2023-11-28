@@ -9,12 +9,14 @@ public class pertanyaan : MonoBehaviour
 {
     public question[]               tanya;
     public float                    spdText;
+    public int                      getBuff;
     public TextMeshProUGUI          kalimatTanya;
     public TextMeshProUGUI          pil1;
     public TextMeshProUGUI          pil2;
     public TextMeshProUGUI          pil3;
     public TextMeshProUGUI          pil4;
     public GameObject               pilihan;
+    public GameObject               cDisplay;
     public GameObject               canvasPertanyaan;
     public dialogBenarSalah         trufalse;
 
@@ -27,6 +29,7 @@ public class pertanyaan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        getBuff = 0;
         done = false;
         jawabBener = false;
         dialog = false;
@@ -103,12 +106,18 @@ public class pertanyaan : MonoBehaviour
                     }
                     else
                     {
-                        canvasPertanyaan.SetActive(false);
+                        Debug.Log(cDisplay);
+                        //canvasPertanyaan.SetActive(false);
+                        if (cDisplay != null)
+                        {
+                            cDisplay.GetComponent<cDisplay>().siBenar = getBuff;
+                            cDisplay.GetComponent<cDisplay>().pertanyaanBeres();
+                        }
                     }
                 }
             }
         }
-        if(kalimatTanya.text == tanyaNow.pertanyaan)
+        if (kalimatTanya.text == tanyaNow.pertanyaan)
         {
             pilihan.SetActive(true);
         }
@@ -178,6 +187,7 @@ public class pertanyaan : MonoBehaviour
     {
         if(tanyaNow.benernya == 1)
         {
+            getBuff++;
             Debug.Log("benar");
             pilihan.SetActive(false);
             kalimatTanya.text = string.Empty;
@@ -195,6 +205,7 @@ public class pertanyaan : MonoBehaviour
     {
         if(tanyaNow.benernya == 2)
         {
+            getBuff++;
             Debug.Log("benar");
             pilihan.SetActive(false);
             kalimatTanya.text = string.Empty;
@@ -212,6 +223,7 @@ public class pertanyaan : MonoBehaviour
     {
         if(tanyaNow.benernya == 3)
         {
+            getBuff++;
             Debug.Log("benar");
             pilihan.SetActive(false);
             kalimatTanya.text = string.Empty;
@@ -229,6 +241,7 @@ public class pertanyaan : MonoBehaviour
     {
         if(tanyaNow.benernya == 4)
         {
+            getBuff++;
             Debug.Log("benar");
             pilihan.SetActive(false);
             kalimatTanya.text = string.Empty;

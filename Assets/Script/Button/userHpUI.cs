@@ -9,6 +9,7 @@ public class userHpUI : MonoBehaviour
     public Text hpUI;
     public Image health;
     public GameObject user;
+    public GameObject loseScreen;
     public Gradient gradien;
     public float hpMax;
     public float hpNow;
@@ -27,5 +28,13 @@ public class userHpUI : MonoBehaviour
         float hasil= hpNow / hpMax * 100;
         hpUI.text = hasil.ToString() +"%";
         health.color = gradien.Evaluate(healthSlider.normalizedValue); 
+        if(hpNow <= 0)
+        {
+            loseScreen.SetActive(true);
+            if (!user.GetComponent<HeroKnight>().gaHidup)
+            {
+                user.GetComponent<HeroKnight>().mati();
+            }
+        }
     }
 }
