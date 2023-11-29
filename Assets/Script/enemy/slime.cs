@@ -59,21 +59,15 @@ public class slime : MonoBehaviour
         {
             timeJump -= Time.deltaTime;
         }
-        else if (timeJump == 0)
+        else if (timeJump <= 0)
         {
-            rb.AddForce(new Vector2(0, jump));
-            timeJump = 3f;
+            rb.AddForce(new Vector2(0,Random.Range(100, jump+1)));
+            timeJump = Random.Range(2f, 6f);
         }
-        else
-        {
-            timeJump = 0;
-        }
-        cekserang();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log("Terjadi tabrakan fisik dengan: " + collision.gameObject.name);
         if(delay > 0)
         {
             delay -= Time.timeScale;
@@ -110,57 +104,6 @@ public class slime : MonoBehaviour
             }
         }
 
-    }
-    public void OnAnimationComplete()
-    {
-        Debug.Log("Animasi telah selesai!");
-
-        // Lakukan sesuatu setelah animasi selesai
-    }
-    void cekserang()
-    {
-        //RaycastHit2D serangs = Physics2D.Raycast(transform.position, arahDetect, 1f, user);
-        //if (serangs != null)
-        //{
-        //    Debug.Log(serangs.collider.name);
-        //}
-        //if(delay > 0)
-        //{
-        //    delay -= Time.deltaTime;
-        //}
-        //else
-        //{
-        //    if (serangs.collider.tag == "Player")
-        //    {
-        //        aSlime.SetTrigger("Attack");
-        //        System.Threading.Thread.Sleep(1000);
-        //        serangs.collider.gameObject.GetComponent<hp>().diserang(damageSlime);
-        //        Debug.Log("Nyerang Player");
-        //    }
-        //    delay = 2f;
-        //}
-        //foreach(var serang in serangs)
-        //{
-        //}
-        //Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
-        //if (delay > 0)
-        //{
-        //    delay -= Time.deltaTime;
-        //}
-        //else
-        //{
-        //    foreach (Collider2D hit in hits)
-        //    {
-        //        if (hit.gameObject.CompareTag("Player"))
-        //        {
-        //            aSlime.SetTrigger("Attack");
-        //            System.Threading.Thread.Sleep(1000);
-        //            hit.gameObject.GetComponent<hp>().diserang(damageSlime);
-        //            Debug.Log("Nyerang Player");
-        //        }
-        //    }
-        //    delay = 2f;
-        //}
     }
     public void SlashSlime(float uDmg)
     {

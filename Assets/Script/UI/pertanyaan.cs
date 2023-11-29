@@ -16,7 +16,7 @@ public class pertanyaan : MonoBehaviour
     public TextMeshProUGUI          pil3;
     public TextMeshProUGUI          pil4;
     public GameObject               pilihan;
-    public GameObject               cDisplay;
+    GameObject               cDisplay;
     public GameObject               canvasPertanyaan;
     public dialogBenarSalah         trufalse;
 
@@ -29,6 +29,7 @@ public class pertanyaan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cDisplay = GameObject.FindGameObjectWithTag("cameras");
         getBuff = 0;
         done = false;
         jawabBener = false;
@@ -107,7 +108,6 @@ public class pertanyaan : MonoBehaviour
                     else
                     {
                         Debug.Log(cDisplay);
-                        //canvasPertanyaan.SetActive(false);
                         if (cDisplay != null)
                         {
                             cDisplay.GetComponent<cDisplay>().siBenar = getBuff;

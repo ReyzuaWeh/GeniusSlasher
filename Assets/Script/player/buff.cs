@@ -5,26 +5,27 @@ using UnityEngine;
 
 public class buff : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D buff)
+    public void OnTriggerEnter2D(Collider2D buffnya)
     {
-        if (buff.gameObject.CompareTag("BM"))//buff merah
+        if (buffnya.gameObject.CompareTag("BM"))//buff merah
         {
-            Destroy(buff.gameObject);
+            Debug.Log("bisa");
+            Destroy(buffnya.gameObject);
             gameObject.GetComponent<HeroKnight>().dmgBuff();
         }
-        if (buff.gameObject.CompareTag("BH"))
+        if (buffnya.gameObject.CompareTag("BH"))
         {
-            Destroy(buff.gameObject);
+            Destroy(buffnya.gameObject);
             gameObject.GetComponent <hp>().hpBuff();
         }
-        if (buff.gameObject.CompareTag("BB"))
+        if (buffnya.gameObject.CompareTag("BB"))
         {
-            Destroy(buff.gameObject);
+            Destroy(buffnya.gameObject);
             gameObject.GetComponent <HeroKnight>().jarakBuff();
         }
-        if (buff.gameObject.CompareTag("BU"))
+        if (buffnya.gameObject.CompareTag("BU"))
         {
-            Destroy(buff.gameObject);
+            Destroy(buffnya.gameObject);
             gameObject.GetComponent<HeroKnight>().spdBuff();
         }
     }

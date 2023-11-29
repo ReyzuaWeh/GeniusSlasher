@@ -641,7 +641,7 @@ Transform:
   m_GameObject: {fileID: 405332701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.05, y: -2.62, z: 0}
+  m_LocalPosition: {x: 99.54, y: -2.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -760,11 +760,11 @@ GameObject:
   - component: {fileID: 430978748}
   m_Layer: 0
   m_Name: spawn
-  m_TagString: Untagged
+  m_TagString: spawnTemplate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &430978748
 Transform:
   m_ObjectHideFlags: 0
@@ -779,6 +779,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1383969321}
+  - {fileID: 1715856499}
   - {fileID: 2065442417}
   - {fileID: 1748437667}
   - {fileID: 1135575497}
@@ -1912,7 +1913,7 @@ Transform:
   m_GameObject: {fileID: 894669688}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.3, y: -2.62, z: 0}
+  m_LocalPosition: {x: -4.73, y: -2.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18101,6 +18102,78 @@ PrefabInstance:
       propertyPath: cDisplay
       value: 
       objectReference: {fileID: 222415142}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[1].benernya
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[1].pilihan1
+      value: Thomas Edison
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[1].pilihan2
+      value: Alexander Graham Bell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[1].pilihan3
+      value: Nicola Tesla
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[1].pilihan4
+      value: James Watt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[3].benernya
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[3].pilihan1
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[3].pilihan2
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[3].pilihan3
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[3].pilihan4
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[4].benernya
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[4].pilihan1
+      value: Burung merak
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[4].pilihan2
+      value: Burung hantu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[4].pilihan3
+      value: Burung merpati
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[4].pilihan4
+      value: Burung bangau
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[1].pertanyaan
+      value: Siapakah penemu lampu pijar?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[3].pertanyaan
+      value: Berapakah jumlah planet dalam tata surya kita saat ini?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021340241912538778, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
+      propertyPath: tanya.Array.data[4].pertanyaan
+      value: Apa yang menjadi simbol perdamaian Internasional?
+      objectReference: {fileID: 0}
     - target: {fileID: 1753316692023159169, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -18151,19 +18224,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1753316692023159169, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1753316692023159169, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1753316692023159169, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1753316692023159169, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1753316692023159169, guid: 717833001bdc48b4ebbdd2a981dd2943, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -18301,7 +18374,7 @@ Transform:
   m_GameObject: {fileID: 1383969319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.815296, y: 1.7182988, z: 0.07264899}
+  m_LocalPosition: {x: 25.28, y: 1.7182988, z: 0.07264899}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22532,6 +22605,52 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1715856498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715856499}
+  - component: {fileID: 1715856500}
+  m_Layer: 0
+  m_Name: spawnerKecil (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715856499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715856498}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 36.6, y: 1.7182988, z: 0.07264899}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 430978748}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1715856500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715856498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683fdf5bfda1e8141b820c2995786df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panggilan: 0
+  slime: {fileID: 543648214}
 --- !u!1 &1727959358
 GameObject:
   m_ObjectHideFlags: 0
@@ -23043,6 +23162,18 @@ PrefabInstance:
     - target: {fileID: 688774296036400462, guid: 6f5368618d23160498a1ad38ae97dad9, type: 3}
       propertyPath: orthographic size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774296036400462, guid: 6f5368618d23160498a1ad38ae97dad9, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774296036400462, guid: 6f5368618d23160498a1ad38ae97dad9, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.15294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 688774296036400462, guid: 6f5368618d23160498a1ad38ae97dad9, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.18431373
       objectReference: {fileID: 0}
     - target: {fileID: 2470747246392602677, guid: 6f5368618d23160498a1ad38ae97dad9, type: 3}
       propertyPath: m_Name

@@ -9,9 +9,9 @@ public class introTrade : MonoBehaviour
     public Text timer;
     public int nilai;
     public GameObject interUI;
-    public GameObject user;
-    public GameObject pertanyaan;
-    public GameObject spawner;
+    GameObject user;
+    GameObject pertanyaan;
+    GameObject spawner;
     public LayerMask lUser;
     public Transform pDetect;
     public GameObject dialog;
@@ -23,6 +23,9 @@ public class introTrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        user = GameObject.FindGameObjectWithTag("Player");
+        pertanyaan = GameObject.FindGameObjectWithTag("cameras");
+        spawner = GameObject.FindGameObjectWithTag("spawnTemplate");
         spawner.gameObject.SetActive(false);
         pDetect.gameObject.SetActive(false);
         dialog.gameObject.SetActive(false);
