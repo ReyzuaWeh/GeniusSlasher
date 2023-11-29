@@ -238,6 +238,16 @@ public class HeroKnight : MonoBehaviour {
         gaHidup = true;
         enabled = false;
     }
+    public void jarakBuff()
+    {
+        detection += 0.1f;
+        Debug.Log("Jarak deteksi : "+ detection);
+    }
+    public void spdBuff()
+    {
+        m_speed += 0.5f;
+        Debug.Log("Speednya : " +  m_speed);
+    }
     void OnDrawGizmos()
     {
         if(attSensor != null)

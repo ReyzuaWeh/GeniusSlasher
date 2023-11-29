@@ -41,6 +41,7 @@ public class cDisplay : MonoBehaviour
             cq1.enabled = false;
             if (TNPC != null)
             {
+                TNPC.GetComponent<introTrade>().nilai = siBenar;
                 TNPC.GetComponent<introTrade>().sudahBeres();
             }
         }

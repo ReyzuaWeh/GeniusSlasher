@@ -9,7 +9,8 @@ public class countdown : MonoBehaviour
     public Text timerText;
     public GameObject user;
     public GameObject panelWin;
-    public GameObject spawner;
+    public GameObject panelLose;
+    GameObject Enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class countdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Enemy = GameObject.FindGameObjectWithTag("slime");
         if(user.GetComponent<hp>().hitpoin <= 0)
         {
             timerText.text = string.Empty;
@@ -29,9 +31,7 @@ public class countdown : MonoBehaviour
         }
         if(timerText.text == "0")
         {
-            panelWin.SetActive(true);
             timerText.text = string.Empty;
-            Time.timeScale = 0;
         }
     }
     public void cd()
@@ -39,13 +39,26 @@ public class countdown : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-        }else if (timer <= 0 && spawner.GetComponent<spawner>().Enemy == null)
+        }else if (timer <= 0 && Enemy == null)
         {
             timer = 0;
+            timerText.text = string.Empty;
+            panelWin.SetActive(true);
             if (user.GetComponent<HeroKnight>().dahNormal == false)
             {
                 user.GetComponent<HeroKnight>().normal();
             }
+            Time.timeScale = 0;
+        }else if(timer <= 0)
+        {
+            timer = 0;
+            timerText.text = string.Empty;
+            panelLose.SetActive(true);
+            if (user.GetComponent<HeroKnight>().dahNormal == false)
+            {
+                user.GetComponent<HeroKnight>().normal();
+            }
+            Time.timeScale = 0;
         }
     }
 

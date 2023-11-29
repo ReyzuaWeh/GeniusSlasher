@@ -18,8 +18,7 @@ public class dialog : MonoBehaviour
     public int index;
     // Start is called before the first frame update
     void Start()
-    {
-        Debug.Log(dialogClose.Length - 1);
+    {   
         if(close != true)
         {
             close = false;

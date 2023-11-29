@@ -1196,6 +1196,7 @@ MonoBehaviour:
   timerText: {fileID: 4861955153799407575}
   user: {fileID: 0}
   panelWin: {fileID: 8180620190224159858}
+  panelLose: {fileID: 3993848079555896846}
 --- !u!1 &3908580240425777629
 GameObject:
   m_ObjectHideFlags: 0

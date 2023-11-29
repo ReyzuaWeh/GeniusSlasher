@@ -6,15 +6,10 @@ public class hp : MonoBehaviour
 {
     public float hitpoin = 100;
     // Start is called before the first frame update
-    void Start()
+    public void hpBuff()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        hitpoin += 50f;
+        Debug.Log("Makin tebel : "+ hitpoin);
     }
     public void diserang(float serang)
     {

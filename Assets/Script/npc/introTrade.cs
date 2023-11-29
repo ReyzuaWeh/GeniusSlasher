@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class introTrade : MonoBehaviour
 {
+    public GameObject[] buffan;
     public Text timer;
+    public int nilai;
     public GameObject interUI;
     public GameObject user;
-    public GameObject buff;
     public GameObject pertanyaan;
     public GameObject spawner;
     public LayerMask lUser;
     public Transform pDetect;
     public GameObject dialog;
+
+    Vector3 spawnPosition;
+    int nilaiAwal;
 
     public float jDetect;
     // Start is called before the first frame update
@@ -61,6 +65,22 @@ public class introTrade : MonoBehaviour
             spawner.gameObject.SetActive(true);
         }
         gameObject.SetActive(false);
+        giveBuff();
+    }
+    void giveBuff()
+    {
+        for(nilaiAwal = 0; nilaiAwal< nilai; nilaiAwal++)
+        {
+            spawnPosition = transform.position + new Vector3(Random.Range(-3f, 3f), 2f, 0f);
+            if (buffan != null)
+            {
+                Instantiate(buffan[Random.Range(0, buffan.Length-1)], spawnPosition, Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("Tidak ada buff");
+            }
+        }
     }
     public void pertanyaanBeres()
     {
